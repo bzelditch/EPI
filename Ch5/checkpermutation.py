@@ -33,4 +33,4 @@ def check_permutation(s, t):
 	return True
 
 
-print(check_permutation("high", "ih"))
+print(check_permutation("high", "ihhg"))
