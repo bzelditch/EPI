@@ -6,20 +6,26 @@
 def furthestreach(A):
 	n = len(A) - 1
 	i, furthest = 0, 0
-	steps = 0
+	count = 1
+	steps = []  # an array containing the min. # of steps to get to i
+				# i.e., steps[i] is the min. # of steps needed to get to position i
 
-	while i <= furthest and furthest <= n:
-
-		if (i + A[i]) > furthest:
-			steps += 1
-
+	while i <= furthest and furthest < n:
+		if i == 0:
+			steps.append(0)
+		else:
+			if furthest > i:
+				steps.append(count)
+			else:
+				count += 1
+				steps.append(count)
 		furthest = max(furthest, i + A[i])
 		i += 1
 
 	return (furthest >= n, steps)
 
 
-A = [1, 4, 1, 1, 1, 0]
+A = [3, 3, 1, 2, 1, 1]
 
 print(furthestreach(A))
 
