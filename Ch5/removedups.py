@@ -22,7 +22,7 @@ def remove_dups1(start_node):
 			next_node = current.getNext()
 			previous.setNext(next_node)
 			if next_node != None:
-				next_node.setPrev(prev_node)
+				next_node.setPrev(previous)
 
 		else:
 			seen.append(val)
@@ -38,6 +38,10 @@ root.addNext(Node(1))
 root.addNext(Node(13))
 root.addNext(Node(14))
 root.addNext(Node(2))
+root.addNext(Node(3))
+root.addNext(Node(5))
+root.addNext(Node(11))
+root.addNext(Node(25))
 
 print(root.toStr())
 
