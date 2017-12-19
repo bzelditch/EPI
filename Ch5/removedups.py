@@ -21,9 +21,7 @@ def remove_dups1(start_node):
 			# Remove this node from the list
 			next_node = current.getNext()
 			previous.setNext(next_node)
-			if next_node != None:
-				next_node.setPrev(previous)
-
+		
 		else:
 			seen.append(val)
 			previous = current
